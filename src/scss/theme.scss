@@ -1,0 +1,21 @@
+/* make the customizations */
+$theme-colors: (
+    "primary": #341f97,
+    "secondary": #5f27cd,
+    "success": #1dd1a1,
+    "danger": #ff6b6b,
+    "warning": #feca57,
+    "info": #ff9f43,
+    "black": #000000
+);
+
+$card-border-radius: 1.25rem;
+$card-spacer-y: 1.25rem;
+$card-spacer-x: 2rem;
+
+$btn-padding-y: 10px 20px;
+$btn-active-box-shadow: 0 8px 25px 0 rgba(0,0,0,0.2);
+$btn-border-radius: .6rem;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
