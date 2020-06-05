@@ -9,8 +9,9 @@ import '../src/scss/index.scss'
 
 class _App extends App {
   render() {
-    const { Component, pageProps, router, store } = this.props
+    const { Component, pageProps, router, store, pesan } = this.props
     const { query } = router
+    console.log(pesan)
     return (
       <React.Fragment>
         <Head>
@@ -23,5 +24,14 @@ class _App extends App {
     )
   }
 }
+
+_App.getInitialProps  = async (appContext) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps (appContext);
+  return { 
+    ...appProps,
+    pesan: 'SSR uy'
+  };
+};
 
 export default withRedux(initStore)(_App)

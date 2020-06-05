@@ -13,6 +13,11 @@ class Home extends React.Component {
     this._toggleRowItem = this._toggleRowItem.bind(this);
   }
 
+  componentDidMount(){
+    const {actions} = this.props;
+    actions.getData()
+  }
+
   _toggleRowItem = () => {
     if (this.state.rowItem == 12) {
       this.setState({
@@ -27,6 +32,11 @@ class Home extends React.Component {
 
   render() {
     const data = ["", "", ""]
+    const {state} = this.props;
+    const {HOME} = state;
+    console.log(HOME.karya)
+    const toJSON = JSON.stringify(HOME.karya)
+    console.log(this.props)
     return (
       <LayoutApp>
         <Container className="my-3">
@@ -68,11 +78,10 @@ class Home extends React.Component {
             </Col>
           </Row>
         </Container>
+        {toJSON}
       </LayoutApp>
     )
   }
-
 }
-
 
 export default Home
